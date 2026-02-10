@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans antialiased text-gray-800 bg-rose-50 overflow-x-hidden;
+    /* Soft gradient background */
+    background: linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glass-card {
+  @apply bg-white/30 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-glow {
+  text-shadow:
+    0 0 10px rgba(255, 105, 180, 0.5),
+    0 0 20px rgba(255, 105, 180, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-rose-300 rounded-full hover:bg-rose-400;
+}
